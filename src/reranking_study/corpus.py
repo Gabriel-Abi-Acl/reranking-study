@@ -1,6 +1,6 @@
 """Corpus sintético mínimo em português e consultas com gabarito.
 
-Fixture do harness deste PR. Não é resultado de experimento nem corpus do PR2.
+Fixture do harness. O conjunto versionado da comparação fica em data/eval/v1.
 """
 
 from reranking_study.types import Document, LabeledQuery

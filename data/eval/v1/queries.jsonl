@@ -1,0 +1,48 @@
+{"id": "q-lex-bib-horario", "category": "lexical", "text": "A Biblioteca Municipal de Vila Serpa abre de terça a sábado, das 9h às 17h?", "relevance": {"p-bib-horario": 2}}
+{"id": "q-lex-bib-multa", "category": "lexical", "text": "A multa por atraso custa 1 real por dia e por volume, com teto de 15 reais?", "relevance": {"p-bib-multa": 2}}
+{"id": "q-lex-bib-emprestimo", "category": "lexical", "text": "O empréstimo comum dura 14 dias e a renovação é feita no balcão?", "relevance": {"p-bib-emprestimo": 2}}
+{"id": "q-par-bib-infantil", "category": "paraphrase", "text": "Em que piso estão os volumes destinados às crianças?", "relevance": {"p-bib-infantil": 2}}
+{"id": "q-par-bib-jornais", "category": "paraphrase", "text": "Onde ficam arquivados os periódicos antigos da cidade?", "relevance": {"p-bib-jornais": 2}}
+{"id": "q-par-bib-sarau", "category": "paraphrase", "text": "Quando acontece o encontro gratuito de versos e em que sala?", "relevance": {"p-bib-sarau": 2}}
+{"id": "q-dist-bib-horario", "category": "distractor", "text": "Em que horário a porta da frente da Biblioteca Municipal de Vila Serpa abre ao público?", "relevance": {"p-bib-horario": 2}}
+{"id": "q-dist-bib-multa", "category": "distractor", "text": "Qual o valor da multa por atraso na Biblioteca Municipal de Vila Serpa?", "relevance": {"p-bib-multa": 2}}
+{"id": "q-dist-bib-emprestimo", "category": "distractor", "text": "Quantos dias dura o empréstimo comum na Biblioteca Municipal de Vila Serpa?", "relevance": {"p-bib-emprestimo": 2}}
+{"id": "q-multi-bib-wifi", "category": "multi", "text": "Quando a senha da rede sem fio da sala de estudo muda e em que quadro ela fica escrita?", "relevance": {"p-bib-wifi-dia": 2, "p-bib-wifi-lugar": 2}}
+{"id": "q-multi-bib-raras", "category": "multi", "text": "Em que dia a visita à sala de obras raras ocorre e em qual gaveta fica a chave?", "relevance": {"p-bib-raras-agenda": 2, "p-bib-raras-chave": 2}}
+{"id": "q-multi-bib-carteirinha", "category": "multi", "text": "Em qual balcão a carteirinha de leitor é emitida e qual comprovante de endereço se exige?", "relevance": {"p-bib-carteirinha": 2, "p-bib-comprovante": 2}}
+{"id": "q-lex-lume-conserto", "category": "lexical", "text": "O conserto de relógio de pulso mecânico leva cinco dias úteis e custa 180 reais?", "relevance": {"p-lume-conserto": 2}}
+{"id": "q-lex-lume-pilha", "category": "lexical", "text": "A troca de pilha de relógio de pulso sai na hora e custa 25 reais?", "relevance": {"p-lume-pilha": 2}}
+{"id": "q-lex-lume-almoco", "category": "lexical", "text": "A Relojoaria Lume fecha para almoço das 12h às 13h?", "relevance": {"p-lume-almoco": 2}}
+{"id": "q-par-lume-oleo", "category": "paraphrase", "text": "Qual produto a oficina passa nas engrenagens para reduzir o atrito?", "relevance": {"p-lume-oleo": 2}}
+{"id": "q-par-lume-bolso", "category": "paraphrase", "text": "O item antigo mostrado na loja pode ser adquirido pelo cliente?", "relevance": {"p-lume-bolso": 2}}
+{"id": "q-par-lume-ancora", "category": "paraphrase", "text": "Quando acontece a classe sobre ajuste do escapamento e quantas vagas existem?", "relevance": {"p-lume-ancora": 2}}
+{"id": "q-dist-lume-conserto", "category": "distractor", "text": "Qual o preço do conserto de relógio de pulso mecânico na Relojoaria Lume?", "relevance": {"p-lume-conserto": 2}}
+{"id": "q-dist-lume-pilha", "category": "distractor", "text": "A troca de pilha na Relojoaria Lume sai na hora?", "relevance": {"p-lume-pilha": 2}}
+{"id": "q-dist-lume-almoco", "category": "distractor", "text": "A Relojoaria Lume fecha para almoço?", "relevance": {"p-lume-almoco": 2}}
+{"id": "q-multi-lume-pecas", "category": "multi", "text": "Em qual gaveta está a engrenagem de reposição e em que dia os pedidos de peça saem ao fornecedor?", "relevance": {"p-lume-engrenagem": 2, "p-lume-pedido": 2}}
+{"id": "q-multi-lume-garantia", "category": "multi", "text": "Por quantos dias corridos a garantia do conserto cobre e o que ela exclui, como queda ou água?", "relevance": {"p-lume-garantia-prazo": 2, "p-lume-garantia-exclusao": 2}}
+{"id": "q-multi-lume-atelier", "category": "multi", "text": "Quem conduz o ateliê pessoalmente e a fila aceita hora marcada?", "relevance": {"p-lume-dono": 2, "p-lume-fila": 2, "p-lume-senha": 1}}
+{"id": "q-lex-lan-entrega", "category": "lexical", "text": "A entrega de polpa aos sócios sai às quintas-feiras, no galpão 2, até as 11h?", "relevance": {"p-lan-entrega": 2, "p-lan-cota": 1}}
+{"id": "q-lex-lan-cota", "category": "lexical", "text": "Cada sócio retira 4 kg de polpa por semana com a caderneta verde?", "relevance": {"p-lan-cota": 2, "p-lan-caderneta": 1}}
+{"id": "q-lex-lan-preco", "category": "lexical", "text": "O quilo da polpa para não sócio custa 12 reais e exige nota no caixa do galpão?", "relevance": {"p-lan-preco": 2}}
+{"id": "q-par-lan-solo", "category": "paraphrase", "text": "Quando o lado setentrional deve receber correção de acidez?", "relevance": {"p-lan-solo": 2}}
+{"id": "q-par-lan-semente", "category": "paraphrase", "text": "Em que mês as casas inscritas recebem a semente que vai à terra?", "relevance": {"p-lan-semente": 2}}
+{"id": "q-par-lan-assembleia", "category": "paraphrase", "text": "Em que data e hora os associados se reúnem na casa principal?", "relevance": {"p-lan-assembleia": 2}}
+{"id": "q-dist-lan-entrega", "category": "distractor", "text": "Quando sai a entrega de polpa aos sócios da Cooperativa Agrícola Ribeirão Lanoso?", "relevance": {"p-lan-entrega": 2, "p-lan-cota": 1}}
+{"id": "q-dist-lan-cota", "category": "distractor", "text": "Quanto de polpa por semana cada sócio da Cooperativa Agrícola Ribeirão Lanoso retira com a caderneta?", "relevance": {"p-lan-cota": 2, "p-lan-caderneta": 1}}
+{"id": "q-dist-lan-preco", "category": "distractor", "text": "Quanto custa o quilo da polpa para não sócio na Cooperativa Agrícola Ribeirão Lanoso?", "relevance": {"p-lan-preco": 2}}
+{"id": "q-multi-lan-agua", "category": "multi", "text": "A que horas a bomba do açude liga e desliga, e qual refeição do refeitório depende dessa água?", "relevance": {"p-lan-bomba": 2, "p-lan-refeitorio": 2}}
+{"id": "q-multi-lan-caminhao", "category": "multi", "text": "Qual a placa fictícia do caminhão e quantos sócios precisam estar a bordo?", "relevance": {"p-lan-caminhao": 2, "p-lan-tripulacao": 2}}
+{"id": "q-multi-lan-rotulo", "category": "multi", "text": "Onde o número do lote do mel é carimbado e a data de envase entra no mesmo rótulo?", "relevance": {"p-lan-rotulo": 2, "p-lan-envase": 2}}
+{"id": "q-lex-mus-horario", "category": "lexical", "text": "O Museu do Bondinho de Vila Serpa abre ao público de quarta a domingo, das 13h às 18h?", "relevance": {"p-mus-horario": 2, "p-mus-cafe": 1}}
+{"id": "q-lex-mus-bilhete", "category": "lexical", "text": "O bilhete inteiro custa 20 reais e o meia-entrada custa 10 reais?", "relevance": {"p-mus-bilhete": 2}}
+{"id": "q-lex-mus-audio", "category": "lexical", "text": "O áudio-guia em português dura 22 minutos?", "relevance": {"p-mus-audio": 2}}
+{"id": "q-par-mus-plantas", "category": "paraphrase", "text": "Onde o visitante vê os desenhos dos trilhos e o que precisa vestir nas mãos?", "relevance": {"p-mus-plantas": 2}}
+{"id": "q-par-mus-bonde", "category": "paraphrase", "text": "O veículo antigo ainda circula pela cidade?", "relevance": {"p-mus-bonde": 2}}
+{"id": "q-par-mus-escola", "category": "paraphrase", "text": "Quantas pessoas entram no grupo de formação a cada ciclo e em que mês se escreve?", "relevance": {"p-mus-escola": 2}}
+{"id": "q-dist-mus-horario", "category": "distractor", "text": "Quando o Museu do Bondinho de Vila Serpa abre ao público?", "relevance": {"p-mus-horario": 2, "p-mus-cafe": 1}}
+{"id": "q-dist-mus-bilhete", "category": "distractor", "text": "Quanto custa o bilhete do Museu do Bondinho de Vila Serpa?", "relevance": {"p-mus-bilhete": 2}}
+{"id": "q-dist-mus-audio", "category": "distractor", "text": "Quanto tempo dura o áudio-guia do Museu do Bondinho de Vila Serpa?", "relevance": {"p-mus-audio": 2}}
+{"id": "q-multi-mus-rodas", "category": "multi", "text": "Onde estão as rodas originais do bonde 7 e a que horas ocorre a visita guiada à oficina de restauro?", "relevance": {"p-mus-rodas": 2, "p-mus-oficina": 2}}
+{"id": "q-multi-mus-loja", "category": "multi", "text": "O que a loja vende na oficina-escola e onde ficam as peças originais de campainha?", "relevance": {"p-mus-miniatura": 2, "p-mus-reserva": 2}}
+{"id": "q-multi-mus-campainha", "category": "multi", "text": "Em que nota toca a campainha do bonde 4 e esse bonde entra na visita livre?", "relevance": {"p-mus-campainha": 2, "p-mus-bonde4": 2}}

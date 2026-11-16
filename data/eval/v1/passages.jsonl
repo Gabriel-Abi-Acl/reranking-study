@@ -1,0 +1,72 @@
+{"id": "p-bib-horario", "domain": "biblioteca-vila-serpa", "text": "O horário de abertura da Biblioteca Municipal de Vila Serpa é de terça a sábado, das 9h às 17h. A porta da frente abre ao público nesses dias."}
+{"id": "p-bib-horario-tarde", "domain": "biblioteca-vila-serpa", "text": "O horário de abertura da Biblioteca Municipal de Vila Serpa é de terça a sábado, das 14h às 17h. A porta da frente abre ao público nesses dias.", "near_duplicate_of": "p-bib-horario"}
+{"id": "p-bib-telefone", "domain": "biblioteca-vila-serpa", "text": "O telefone da Biblioteca Municipal de Vila Serpa atende no horário comercial das 9h às 17h, mesmo quando a porta da frente está fechada ao público."}
+{"id": "p-bib-inventario", "domain": "biblioteca-vila-serpa", "text": "Na segunda-feira a Biblioteca Municipal de Vila Serpa faz inventário interno. Nesse horário a porta da frente não abre ao público."}
+{"id": "p-bib-multa", "domain": "biblioteca-vila-serpa", "text": "A multa por atraso na Biblioteca Municipal de Vila Serpa custa 1 real por dia e por volume, com teto de 15 reais."}
+{"id": "p-bib-cofre", "domain": "biblioteca-vila-serpa", "text": "O cofre da Biblioteca Municipal de Vila Serpa guarda o troco do balcão. A multa por atraso em real não entra nesse cofre."}
+{"id": "p-bib-emprestimo", "domain": "biblioteca-vila-serpa", "text": "O empréstimo comum na Biblioteca Municipal de Vila Serpa dura 14 dias. A renovação é feita no balcão e não pelo telefone."}
+{"id": "p-bib-emprestimo-longo", "domain": "biblioteca-vila-serpa", "text": "O empréstimo comum na Biblioteca Municipal de Vila Serpa dura 21 dias. A renovação é feita no balcão e não pelo telefone.", "near_duplicate_of": "p-bib-emprestimo"}
+{"id": "p-bib-infantil", "domain": "biblioteca-vila-serpa", "text": "O acervo infantil fica no salão azul, no segundo andar, com almofadas e estantes baixas."}
+{"id": "p-bib-infantil-terreo", "domain": "biblioteca-vila-serpa", "text": "O acervo infantil fica no salão azul, no térreo, com almofadas e estantes baixas.", "near_duplicate_of": "p-bib-infantil"}
+{"id": "p-bib-jornais", "domain": "biblioteca-vila-serpa", "text": "Os jornais locais encadernados ocupam a estante de metal ao lado da janela que olha para o norte."}
+{"id": "p-bib-sarau", "domain": "biblioteca-vila-serpa", "text": "A leitura coletiva de poemas ocorre na última sexta do mês, no auditório do fundo, sem cobrança para quem já tem carteirinha."}
+{"id": "p-bib-wifi-dia", "domain": "biblioteca-vila-serpa", "text": "A senha da rede sem fio da sala de estudo muda toda segunda-feira."}
+{"id": "p-bib-wifi-lugar", "domain": "biblioteca-vila-serpa", "text": "A senha vigente da rede sem fio da sala de estudo fica escrita no quadro branco ao lado da copa."}
+{"id": "p-bib-raras-agenda", "domain": "biblioteca-vila-serpa", "text": "A visita à sala de obras raras exige hora marcada na recepção e só ocorre às quintas-feiras."}
+{"id": "p-bib-raras-chave", "domain": "biblioteca-vila-serpa", "text": "A chave da sala de obras raras fica no gaveteiro da recepção, na gaveta marcada com fita azul."}
+{"id": "p-bib-carteirinha", "domain": "biblioteca-vila-serpa", "text": "A carteirinha de leitor é emitida no balcão da entrada."}
+{"id": "p-bib-comprovante", "domain": "biblioteca-vila-serpa", "text": "A emissão da carteirinha de leitor exige comprovante de endereço no município de Vila Serpa."}
+{"id": "p-lume-conserto", "domain": "relojoaria-lume", "text": "O conserto de relógio de pulso mecânico na Relojoaria Lume leva cinco dias úteis e custa 180 reais."}
+{"id": "p-lume-conserto-barato", "domain": "relojoaria-lume", "text": "O conserto de relógio de pulso mecânico na Relojoaria Lume leva três dias úteis e custa 90 reais.", "near_duplicate_of": "p-lume-conserto"}
+{"id": "p-lume-pilha", "domain": "relojoaria-lume", "text": "A troca de pilha de relógio de pulso na Relojoaria Lume sai na hora e custa 25 reais."}
+{"id": "p-lume-pilha-tarde", "domain": "relojoaria-lume", "text": "A troca de pilha de relógio de pulso na Relojoaria Lume sai no dia seguinte e custa 40 reais.", "near_duplicate_of": "p-lume-pilha"}
+{"id": "p-lume-almoco", "domain": "relojoaria-lume", "text": "A Relojoaria Lume abre de segunda a sexta, das 10h às 18h, e fecha para almoço das 12h às 13h."}
+{"id": "p-lume-almoco-sem", "domain": "relojoaria-lume", "text": "A Relojoaria Lume abre de segunda a sexta, das 10h às 18h, e não fecha para almoço das 12h às 13h.", "near_duplicate_of": "p-lume-almoco"}
+{"id": "p-lume-vitrine", "domain": "relojoaria-lume", "text": "A pilha do relógio de parede da vitrine da Relojoaria Lume é trocada pelo dono aos sábados, sem preço de balcão e sem atendimento na hora."}
+{"id": "p-lume-aviso", "domain": "relojoaria-lume", "text": "O quadro da Relojoaria Lume avisa que o conserto anunciado na porta não inclui relógio de parede nem pilha de vitrine."}
+{"id": "p-lume-senha", "domain": "relojoaria-lume", "text": "A senha de papel da Relojoaria Lume organiza a fila do balcão. Ela não informa preço de conserto nem horário de almoço."}
+{"id": "p-lume-oleo", "domain": "relojoaria-lume", "text": "O fluido usado na lubrificação está no frasco âmbar da prateleira alta, rotulado Lume-3."}
+{"id": "p-lume-bolso", "domain": "relojoaria-lume", "text": "A peça de 1912 exposta na vitrine interna não está disponível para compra."}
+{"id": "p-lume-ancora", "domain": "relojoaria-lume", "text": "A aula de regulagem da âncora ocorre no primeiro sábado do mês, com oito lugares na bancada do fundo."}
+{"id": "p-lume-engrenagem", "domain": "relojoaria-lume", "text": "A engrenagem de reposição fica na gaveta 4 do ateliê."}
+{"id": "p-lume-pedido", "domain": "relojoaria-lume", "text": "Os pedidos de peça ao fornecedor saem às quartas-feiras e chegam na semana seguinte."}
+{"id": "p-lume-garantia-prazo", "domain": "relojoaria-lume", "text": "A garantia do conserto cobre 90 dias corridos."}
+{"id": "p-lume-garantia-exclusao", "domain": "relojoaria-lume", "text": "A garantia do conserto não cobre queda nem contato com água."}
+{"id": "p-lume-dono", "domain": "relojoaria-lume", "text": "Iara Lume conduz o ateliê e atende pessoalmente depois da senha."}
+{"id": "p-lume-fila", "domain": "relojoaria-lume", "text": "A chamada da fila segue a ordem de chegada e não aceita hora marcada."}
+{"id": "p-lan-entrega", "domain": "cooperativa-lanoso", "text": "A entrega de polpa aos sócios da Cooperativa Agrícola Ribeirão Lanoso sai às quintas-feiras, no galpão 2, até as 11h."}
+{"id": "p-lan-entrega-sexta", "domain": "cooperativa-lanoso", "text": "A entrega de polpa aos sócios da Cooperativa Agrícola Ribeirão Lanoso sai às sextas-feiras, no galpão 3, até as 11h.", "near_duplicate_of": "p-lan-entrega"}
+{"id": "p-lan-cota", "domain": "cooperativa-lanoso", "text": "Cada sócio da Cooperativa Agrícola Ribeirão Lanoso retira 4 kg de polpa por semana com a caderneta verde."}
+{"id": "p-lan-cota-8", "domain": "cooperativa-lanoso", "text": "Cada sócio da Cooperativa Agrícola Ribeirão Lanoso retira 8 kg de polpa por semana com a caderneta verde.", "near_duplicate_of": "p-lan-cota"}
+{"id": "p-lan-preco", "domain": "cooperativa-lanoso", "text": "O quilo da polpa para não sócio na Cooperativa Agrícola Ribeirão Lanoso custa 12 reais e exige nota no caixa do galpão."}
+{"id": "p-lan-preco-15", "domain": "cooperativa-lanoso", "text": "O quilo da polpa para não sócio na Cooperativa Agrícola Ribeirão Lanoso custa 15 reais e exige nota no caixa do galpão.", "near_duplicate_of": "p-lan-preco"}
+{"id": "p-lan-mel", "domain": "cooperativa-lanoso", "text": "O mel de flor do entreposto da Cooperativa Agrícola Ribeirão Lanoso custa 12 reais o vidro de 300 g."}
+{"id": "p-lan-galpao1", "domain": "cooperativa-lanoso", "text": "O galpão 1 da Cooperativa Agrícola Ribeirão Lanoso guarda ferramentas e não despacha polpa aos sócios."}
+{"id": "p-lan-caderneta", "domain": "cooperativa-lanoso", "text": "A caderneta verde da Cooperativa Agrícola Ribeirão Lanoso fica suspensa se a mensalidade atrasar dois meses."}
+{"id": "p-lan-solo", "domain": "cooperativa-lanoso", "text": "O laudo do terreno do talhão norte recomenda calcário em setembro, antes da chuva."}
+{"id": "p-lan-semente", "domain": "cooperativa-lanoso", "text": "O grão de feijão-lanoso para plantio é entregue em agosto, dois quilos por família cadastrada."}
+{"id": "p-lan-assembleia", "domain": "cooperativa-lanoso", "text": "O encontro ordinário dos membros acontece na primeira segunda-feira do trimestre, às 19h, no salão da sede."}
+{"id": "p-lan-bomba", "domain": "cooperativa-lanoso", "text": "A bomba do açude liga às 5h e desliga às 8h."}
+{"id": "p-lan-refeitorio", "domain": "cooperativa-lanoso", "text": "O refeitório espera a bomba parar para usar a água do açude. O almoço sai às 11h30."}
+{"id": "p-lan-caminhao", "domain": "cooperativa-lanoso", "text": "O caminhão da cooperativa usa a placa fictícia LAN-1C00."}
+{"id": "p-lan-tripulacao", "domain": "cooperativa-lanoso", "text": "O caminhão só roda com dois sócios a bordo e não sai com um motorista sozinho."}
+{"id": "p-lan-rotulo", "domain": "cooperativa-lanoso", "text": "O rótulo do mel traz o número do lote carimbado na copa."}
+{"id": "p-lan-envase", "domain": "cooperativa-lanoso", "text": "A data de envase do mel é carimbada ao lado do lote, no mesmo rótulo."}
+{"id": "p-mus-horario", "domain": "museu-bondinho-vila-serpa", "text": "O Museu do Bondinho de Vila Serpa abre ao público de quarta a domingo, das 13h às 18h."}
+{"id": "p-mus-horario-manha", "domain": "museu-bondinho-vila-serpa", "text": "O Museu do Bondinho de Vila Serpa abre ao público de quarta a domingo, das 9h às 12h.", "near_duplicate_of": "p-mus-horario"}
+{"id": "p-mus-bilhete", "domain": "museu-bondinho-vila-serpa", "text": "O bilhete inteiro do Museu do Bondinho de Vila Serpa custa 20 reais e o meia-entrada custa 10 reais, pagos na bilheteria do pátio."}
+{"id": "p-mus-bilhete-30", "domain": "museu-bondinho-vila-serpa", "text": "O bilhete inteiro do Museu do Bondinho de Vila Serpa custa 30 reais e o meia-entrada custa 15 reais, pagos na bilheteria do pátio.", "near_duplicate_of": "p-mus-bilhete"}
+{"id": "p-mus-audio", "domain": "museu-bondinho-vila-serpa", "text": "O áudio-guia do Museu do Bondinho de Vila Serpa está em português e dura 22 minutos, retirado no balcão com um documento."}
+{"id": "p-mus-audio-longo", "domain": "museu-bondinho-vila-serpa", "text": "O áudio-guia do Museu do Bondinho de Vila Serpa está em português e em inglês e dura 40 minutos, retirado no balcão com um documento.", "near_duplicate_of": "p-mus-audio"}
+{"id": "p-mus-cafe", "domain": "museu-bondinho-vila-serpa", "text": "O café do pátio do Museu do Bondinho de Vila Serpa abre só nos dias de museu e não vende bilhete nem valida entrada."}
+{"id": "p-mus-barco", "domain": "museu-bondinho-vila-serpa", "text": "Passeios de barco no cais saem de hora em hora no verão e não entram no Museu do Bondinho de Vila Serpa."}
+{"id": "p-mus-dedetizacao", "domain": "museu-bondinho-vila-serpa", "text": "Em fevereiro o Museu do Bondinho de Vila Serpa fecha uma semana para dedetização do arquivo."}
+{"id": "p-mus-plantas", "domain": "museu-bondinho-vila-serpa", "text": "As plantas da via permanente estão no arquivo do segundo piso, e a consulta pede luva de algodão."}
+{"id": "p-mus-bonde", "domain": "museu-bondinho-vila-serpa", "text": "O carro histórico em exibição percorreu a linha do cais até 1978 e hoje permanece no trilho interno."}
+{"id": "p-mus-escola", "domain": "museu-bondinho-vila-serpa", "text": "A turma de aprendizes da oficina aceita doze inscritos por semestre, com ficha aberta em fevereiro."}
+{"id": "p-mus-rodas", "domain": "museu-bondinho-vila-serpa", "text": "As rodas originais do bonde 7 estão no galpão das rodas, com a ficha azul."}
+{"id": "p-mus-oficina", "domain": "museu-bondinho-vila-serpa", "text": "A visita guiada à oficina de restauro ocorre às quartas-feiras, às 15h."}
+{"id": "p-mus-miniatura", "domain": "museu-bondinho-vila-serpa", "text": "A loja vende miniaturas de bonde feitas na oficina-escola."}
+{"id": "p-mus-reserva", "domain": "museu-bondinho-vila-serpa", "text": "Peças originais de campainha permanecem na reserva técnica e não vão para a loja."}
+{"id": "p-mus-campainha", "domain": "museu-bondinho-vila-serpa", "text": "A campainha do bonde 4 toca em sol menor no circuito de demonstração."}
+{"id": "p-mus-bonde4", "domain": "museu-bondinho-vila-serpa", "text": "O bonde 4 está em restauro fechado e fora da visita livre."}
