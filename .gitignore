@@ -20,3 +20,6 @@ htmlcov/
 .env
 .env.*
 !.env.example
+
+# Saída local da avaliação. Não é resultado do estudo.
+results/

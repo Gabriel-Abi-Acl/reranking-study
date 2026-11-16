@@ -51,6 +51,7 @@ def test_pipeline_reranks_only_the_fetched_top_n_and_records_latency() -> None:
     assert spy.seen == ["d1", "d2"]
     assert result.ids == ["d2"]
     assert result.scores == [2.0]
+    assert [hit.doc_id for hit in result.first_stage_hits] == ["d1"]
     assert set(result.stage_latency_ms) == {"retrieve", "rerank"}
     assert all(value >= 0.0 for value in result.stage_latency_ms.values())
 
@@ -74,6 +75,7 @@ def test_pipeline_without_reranker_keeps_first_stage_order() -> None:
     result = pipeline.run("aa", k=1)
     assert result.ids == ["d1"]
     assert result.scores == [0.4]
+    assert [hit.doc_id for hit in result.first_stage_hits] == ["d1"]
     assert set(result.stage_latency_ms) == {"retrieve"}
     assert retriever.last_k == 1
 

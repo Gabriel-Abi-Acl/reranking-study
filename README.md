@@ -13,7 +13,7 @@ Comparar, no mesmo corpus e nas mesmas perguntas:
 3. híbrido denso + BM25 com Reciprocal Rank Fusion (RRF);
 4. recuperação de primeiro estágio seguida de reranker (cross-encoder ou LLM-as-reranker) sobre o top-N.
 
-Métricas previstas: recall@k, MRR, nDCG@k, latência por estágio e custo por consulta. Latência já é registrada pelo pipeline. Custo por consulta depende de chamada real e fica para o PR4.
+Métricas: recall@k, MRR@10, nDCG@k com grau, lift de nDCG@10 do rerank contra o próprio primeiro estágio, latência por estágio e chamadas do reranker. Token e custo em moeda só entram se o componente os informar. O relatório de um experimento com modelo real fica para o PR4.
 
 ## Hipótese
 
@@ -74,6 +74,7 @@ Copie `.env.example` para `.env` e exporte as variáveis no ambiente local. O ex
 export OPENAI_API_KEY=
 export OPENAI_BASE_URL=
 export OPENAI_MODEL=
+export OPENAI_EMBEDDING_MODEL=
 export CROSS_ENCODER_MODEL=
 ```
 
@@ -93,12 +94,39 @@ print(recall_at_k(result.ids, {"doc-bm25": 1}, k=1))
 
 `CrossEncoderReranker` e `LlmReranker` importam `sentence-transformers` e `openai` só na primeira chamada de `rerank`. Sem o extra, ou sem `OPENAI_API_KEY` no caso do LLM, a chamada falha em vez de devolver escore.
 
+## Avaliação offline
+
+Os comandos `evaluate-retrieval` e `python -m reranking_study.evaluate` rodam um pipeline, ou `--pipeline all`, sobre `data/eval/v1`. `all` executa seis arranjos, nesta ordem: `dense`, `bm25`, `hybrid_rrf` e cada um desses primeiro estágios seguido de rerank (`dense_rerank`, `bm25_rerank`, `hybrid_rrf_rerank`). O rerank reordena só o top-N. N vem de `--rerank-top-n` e o padrão é 10. O ranking devolvido tem profundidade 10, o mesmo corte de recall@10, MRR@10 e nDCG@10.
+
+O padrão é o embedder hash e o `FakeReranker`. Os dois são determinísticos e não chamam rede. O número que eles gravam confere se o pipeline, o gabarito e a agregação estão ligados. Não são achados do estudo. Este README não publica recall, MRR, nDCG nem lift.
+
+```bash
+uv run evaluate-retrieval --pipeline all --output results/eval
+uv run python -m reranking_study.evaluate --pipeline dense --output results/eval
+```
+
+A saída fica em `results/`, que o git ignora. Não commite esse diretório. `records.jsonl` tem uma linha por consulta e pipeline. `summary.json` tem a média por pipeline e, dentro dele, por categoria (`lexical`, `paraphrase`, `distractor`, `multi`). No topo do agregado, `query_count` é o tamanho do conjunto de perguntas. Dentro de um pipeline, `query_count` conta as linhas daquele pipeline, com erro incluído na contagem e fora da média. A média é das consultas, não a média das quatro categorias.
+
+Como ler cada campo:
+
+- `recall_at_1`, `recall_at_3`, `recall_at_5`, `recall_at_10`: fração dos trechos com grau maior que 0 que aparecem até aquela posição.
+- `mrr_at_10`: inverso da posição do primeiro trecho com grau maior que 0, olhando só os 10 primeiros. Zero se nenhum aparece nesse corte.
+- `ndcg_at_5` e `ndcg_at_10`: nDCG com ganho `2^grau - 1` e desconto `log2(posição + 1)`. O grau 1 e o grau 2 pesam diferente. O IDCG usa o gabarito da pergunta.
+- `ndcg_at_10_lift`: nDCG@10 depois do rerank menos o nDCG@10 do primeiro estágio da mesma consulta. Null quando o pipeline não reranqueia. Zero entra na média. Número negativo significa que o rerank piorou aquela consulta.
+- `stage_latency_ms`: média, em milissegundos, de `retrieve` e de `rerank`, só nas consultas sem erro. `count` diz quantas entradas a média usou. Sem medição, a média é null.
+- `reranker_calls`: quantas vezes o reranker foi chamado, inclusive chamada que falhou. É proxy de custo, não de qualidade. Pipeline sem rerank fica em zero.
+- `prompt_tokens`, `completion_tokens` e `cost_usd`: null quando o componente não informa uso. O hash e o reranker falso não informam. Não há preço inventado. Se uma chamada que falhou informou uso, esse uso entra na soma.
+
+Consulta com erro fica na linha, com `error` preenchido, e sai da média de qualidade e de latência. Se todas as linhas do grupo falharam, a média é null. A contagem de chamadas do reranker continua somando.
+
+Embedder `openai`, reranker `cross-encoder` ou reranker `llm` só seguem com `--allow-live` e com modelo e chave no ambiente. Sem a flag, ou com variável vazia, o processo termina com código 2 e a mensagem diz que nenhuma chamada foi feita. O embedder OpenAI exige `OPENAI_API_KEY` e `OPENAI_EMBEDDING_MODEL` e usa o extra `llm`. O reranker LLM exige `OPENAI_API_KEY` e `OPENAI_MODEL`. O cross-encoder exige `CROSS_ENCODER_MODEL` e usa o extra `cross-encoder`; a primeira chamada pode baixar o modelo. O comando padrão não faz isso.
+
 ## O que o repositório já cobre
 
-Contrato do pipeline, índice em memória, métricas por consulta, retrievers e reranker determinísticos, e o conjunto `data/eval/v1`. CI roda lint e testes. Embeddings de modelo, cross-encoder real, LLM e o relatório de custo ficam para os PRs seguintes. Este texto não traz número de experimento.
+Contrato do pipeline, índice em memória, métricas por consulta, retrievers e reranker determinísticos, o conjunto `data/eval/v1` e o harness offline que agrega essas métricas. CI roda lint e testes. O relatório com embeddings, cross-encoder e LLM-as-reranker fica para o PR4. Este texto não traz número de experimento.
 
 ## Roadmap
 
 - PR2: corpus e perguntas com gabarito em `data/eval/v1`.
-- PR3: avaliação — agregação de recall@k, MRR, nDCG@k e o registro de latência por estágio.
+- PR3: harness offline `evaluate-retrieval`, com agregado por pipeline e por categoria.
 - PR4: experimentos com embeddings, cross-encoder e LLM-as-reranker, mais o relatório de métricas, latência e custo por consulta. Sem resultado inventado.

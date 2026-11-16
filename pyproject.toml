@@ -10,6 +10,9 @@ dependencies = []
 cross-encoder = ["sentence-transformers>=3.3.0"]
 llm = ["openai>=1.55.0"]
 
+[project.scripts]
+evaluate-retrieval = "reranking_study.evaluate:main"
+
 [dependency-groups]
 dev = [
     "pytest>=8.3.0",

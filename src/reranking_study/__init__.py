@@ -1,7 +1,7 @@
 """Estudo de pipelines de recuperação para RAG: denso, BM25, RRF e rerank.
 
-Este pacote entrega o contrato, o conjunto v1 e os dobles determinísticos.
-Número de experimento fica fora daqui.
+Este pacote entrega o contrato, o conjunto v1, os dobles determinísticos
+e o harness offline. Número de experimento fica fora daqui.
 """
 
 from reranking_study.corpus import DOCUMENTS, QUERIES
