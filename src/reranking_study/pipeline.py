@@ -39,14 +39,21 @@ class RetrievalPipeline:
         started = time.perf_counter()
         first_hits = self.retriever.retrieve(query, fetch_k)
         latency: dict[str, float] = {"retrieve": _elapsed_ms(started)}
-        hits = first_hits[:k]
+        # Corte em k antes do rerank. O harness compara o nDCG contra esta lista.
+        first_stage = tuple(first_hits[:k])
+        hits = list(first_stage)
         if self.reranker is not None and self.rerank_top_n > 0:
             pool = first_hits[: self.rerank_top_n]
             rerank_started = time.perf_counter()
             reranked = self.reranker.rerank(query, pool, len(pool))
             latency["rerank"] = _elapsed_ms(rerank_started)
             hits = _merge_reranked(first_hits, reranked, k)
-        return PipelineResult(query=query, hits=tuple(hits), stage_latency_ms=dict(latency))
+        return PipelineResult(
+            query=query,
+            hits=tuple(hits),
+            stage_latency_ms=dict(latency),
+            first_stage_hits=first_stage,
+        )
 
 
 def _merge_reranked(first_hits: list[Hit], reranked: list[Hit], k: int) -> list[Hit]:

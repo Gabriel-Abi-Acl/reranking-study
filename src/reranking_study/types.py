@@ -41,15 +41,17 @@ class LabeledQuery:
 
 @dataclass(frozen=True)
 class PipelineResult:
-    """Saída de uma consulta: ranking final e latência de cada estágio, em milissegundos.
+    """Saída de uma consulta: ranking final, primeiro estágio e latência em milissegundos.
 
-    hits está na ordem devolvida ao avaliador. stage_latency_ms não inclui I/O de modelo
+    hits está na ordem devolvida ao avaliador. first_stage_hits é esse corte antes do
+    rerank, para o lift usar a mesma busca. stage_latency_ms não inclui I/O de modelo
     que tenha ocorrido fora do método chamado.
     """
 
     query: str
     hits: tuple[Hit, ...]
     stage_latency_ms: Mapping[str, float]
+    first_stage_hits: tuple[Hit, ...] = ()
 
     @property
     def ids(self) -> list[str]:
