@@ -2,7 +2,7 @@
 
 Estudo técnico que compara pipelines de recuperação para RAG. Complementa os estudos `rag-study` e `chunking-study`. O autor do estudo é Gabriel, desenvolvedor de IA e automação no Brasil.
 
-Este repositório mede qualidade e custo de quatro arranjos sobre o mesmo conjunto de perguntas. Não há resultado experimental neste PR. Números só entram quando um experimento for executado e registrado.
+Este repositório mede qualidade e custo de quatro arranjos sobre o mesmo conjunto de perguntas. Não há resultado experimental neste repositório. Números só entram quando um experimento for executado e registrado.
 
 ## Objetivo
 
@@ -28,13 +28,27 @@ A hipótese abaixo será testada nos experimentos. Não é conclusão.
 - Corpus e perguntas usam só texto sintético ou público. Nenhum documento privado entra no índice.
 - Os quatro pipelines compartilham o índice em memória e o gabarito de relevância graduada.
 - O primeiro estágio devolve candidatos. Se há reranker, ele reordena apenas o top-N e o pipeline devolve top-k. Se k passa de N, o restante acompanha a ordem do primeiro estágio.
-- O embedder denso deste PR é um hash determinístico (SHA-256 por token, vetor L2-normalizado). Existe para fixar o contrato e os testes. Embeddings de modelo real não fazem parte deste PR.
+- O embedder denso atual é um hash determinístico (SHA-256 por token, vetor L2-normalizado). Existe para fixar o contrato e os testes. Embeddings de modelo real ficam para o PR4.
 - BM25 é Okapi em Python puro. IDF no estilo Lucene, `ln(1 + (N - df + 0.5) / (df + 0.5))`, com `k1 = 1.5` e `b = 0.75`. Cada termo distinto da consulta contribui uma vez.
 - RRF usa `1 / (k + posição)` com `k = 60` e posição começando em 1. A fusão ignora a escala dos escores de origem.
 - recall@k e MRR tratam grau maior que 0 como relevante. nDCG@k usa ganho `2^grau - 1` e desconto `log2(posição + 1)`.
 - Configuração sensível vem de variável de ambiente. Chaves ficam fora do git.
 
-O corpus em `src/reranking_study/corpus.py` é um placeholder de poucas frases em português, com rótulos para o harness. Não é o corpus do PR2 e não sustenta conclusão.
+O módulo `src/reranking_study/corpus.py` segue como placeholder de poucas frases para o harness. O conjunto da comparação é o v1 descrito abaixo. Nenhum dos dois sustenta conclusão sozinho.
+
+## Conjunto de avaliação (v1)
+
+O v1 tem 72 trechos e 48 perguntas. As categorias ficam empatadas: 12 de correspondência lexical, 12 de paráfrase, 12 com distratores e 12 multi-passagem. Há 12 quase-duplicatas. Os trechos se dividem em quatro domínios fictícios, 18 em cada: a Biblioteca Municipal de Vila Serpa, a Relojoaria Lume, a Cooperativa Agrícola Ribeirão Lanoso e o Museu do Bondinho de Vila Serpa. Vila Serpa, o Ribeirão Lanoso, a relojoaria e as pessoas citadas são inventados.
+
+Os arquivos são `data/eval/v1/passages.jsonl` e `data/eval/v1/queries.jsonl`. `load_eval_corpus` e `load_eval_queries` recusam id repetido, rótulo apontando para trecho inexistente, pergunta sem grau 2, grau fora de {1, 2} e categoria fora do conjunto fixo (`lexical`, `paraphrase`, `distractor`, `multi`). O grau 0 não é gravado: trecho ausente no mapa da pergunta é irrelevante.
+
+### Como foi construído
+
+O texto foi escrito à mão para este estudo, em português, em frases curtas. Cada quase-duplicata repete um trecho e troca um fato (horário, preço, prazo, lugar ou uma negação); o campo `near_duplicate_of` liga a variante ao original. Os distratores reaproveitam o nome da instituição ou outra palavra da pergunta e respondem um fato diferente. As paráfrases foram redigidas com outro vocabulário, de propósito, para o enunciado não repetir as palavras do trecho. Nas perguntas multi-passagem a resposta foi partida em dois trechos: cada um guarda uma parte necessária e os dois recebem grau 2. O grau 1 marca contexto verdadeiro do mesmo assunto que não fecha a resposta. Um único anotador atribuiu os graus.
+
+### Limitações
+
+O conjunto é pequeno, de um idioma e de um anotador só, sem segunda revisão. As categorias saem da redação do texto. Quase-duplicata e distrator podem ser fáceis para uma pessoa e ainda assim trocar a ordem de um ranking por palavras; isso fica para o experimento. As paráfrases controlam a sobreposição de palavras na redação, sem um modelo de sinônimos. O v1 fixa o gabarito. Ele não é um relatório de recuperação.
 
 ## Como rodar
 
@@ -79,12 +93,12 @@ print(recall_at_k(result.ids, {"doc-bm25": 1}, k=1))
 
 `CrossEncoderReranker` e `LlmReranker` importam `sentence-transformers` e `openai` só na primeira chamada de `rerank`. Sem o extra, ou sem `OPENAI_API_KEY` no caso do LLM, a chamada falha em vez de devolver escore.
 
-## Escopo deste PR
+## O que o repositório já cobre
 
-Interfaces, índice em memória, pipeline, métricas, corpus mínimo e testes com retrievers e reranker determinísticos. CI roda lint e testes.
+Contrato do pipeline, índice em memória, métricas por consulta, retrievers e reranker determinísticos, e o conjunto `data/eval/v1`. CI roda lint e testes. Embeddings de modelo, cross-encoder real, LLM e o relatório de custo ficam para os PRs seguintes. Este texto não traz número de experimento.
 
 ## Roadmap
 
-- PR2: corpus e perguntas com gabarito, sintético ou público, no lugar do placeholder.
+- PR2: corpus e perguntas com gabarito em `data/eval/v1`.
 - PR3: avaliação — agregação de recall@k, MRR, nDCG@k e o registro de latência por estágio.
 - PR4: experimentos com embeddings, cross-encoder e LLM-as-reranker, mais o relatório de métricas, latência e custo por consulta. Sem resultado inventado.
